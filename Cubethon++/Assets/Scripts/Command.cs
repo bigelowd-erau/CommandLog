@@ -1,6 +1,6 @@
 using UnityEngine;
 
-abstract class Command
+public abstract class Command
 {
     protected PlayerController m_Reciever;
 

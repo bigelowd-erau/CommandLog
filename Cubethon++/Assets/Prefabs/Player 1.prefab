@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5488632779746080825}
-  forwardForce: 30000
+  forwardForce: 25000
   sidewaysforce: 65
   playerRotation: 0
 --- !u!114 &5488632779746080822
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 5488632779746080821}
   playerGravity: {fileID: 6397764579911803902}
-  collideMaterial: {fileID: 0}
+  client: {fileID: 3320519270952794106, guid: 1b2e13f0f0e333b4cac636a358c41179, type: 3}
 --- !u!114 &6397764579911803902
 MonoBehaviour:
   m_ObjectHideFlags: 0

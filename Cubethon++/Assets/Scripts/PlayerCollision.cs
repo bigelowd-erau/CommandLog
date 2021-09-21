@@ -5,6 +5,7 @@ public class PlayerCollision : MonoBehaviour
 {
     public PlayerMovement movement;
     public PlayerGravity playerGravity;
+    public Client client;
 
     //when the player collides with another object
     void OnCollisionEnter(Collision collision)
@@ -27,24 +28,9 @@ public class PlayerCollision : MonoBehaviour
         {
             //disable player movment script
             movement.enabled = false;
+            client.enabled = false;
             collision.collider.GetComponent<MeshRenderer>().material.color = Color.red;
             FindObjectOfType<GameManager>().EndGame();
         }
     }
-    /////////////////////////////////////////////////
-   /////////////Poorly Optimized Function////////////
-    ////////////////////////////////////////////////
-    /*
-    private void OnCollisionStay(Collision collision)
-    {
-        //iff the collider is a floor
-        if (collision.collider.tag == "Floor")
-        {
-            //set player rotation to the floor's rotation
-            movement.playerRotation = collision.collider.transform.rotation.eulerAngles.z;
-            //change the gravity towards the direction of the players new rotation.
-            playerGravity.ChangeGravity(movement.playerRotation);
-            Debug.Log("Changed gravity towards direction of new floor");
-        }
-    }*/
 }

@@ -2,9 +2,21 @@ using UnityEngine;
 
 public class PlayerReciever : PlayerController
 {
-    public override void MoveSideways(PlayerMovement pm, bool direction)
+    public PlayerMovement pm;
+
+    public PlayerReciever(PlayerMovement pm)
     {
-        pm.MoveSideways(direction);
-        Debug.Log("Move Sideways");
+        this.pm = pm;
+    }
+    public override void MoveLeft()
+    {
+        pm.MoveLeft();
+        Debug.Log("Move Left");
+    }
+
+    public override void MoveRight()
+    {
+        pm.MoveRight();
+        Debug.Log("Move Right");
     }
 }

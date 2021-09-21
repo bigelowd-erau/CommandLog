@@ -25,26 +25,16 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(0,0,forwardForce * Time.deltaTime);
         //get current
         playerRadRot = Mathf.Deg2Rad * playerRotation;
-        //if d is pressed on the keyboard
-        /*if (Input.GetKey("d"))
-        {   
-            //adds a velocity change force to the player relative right
-            //the direction is calculated based on the cirrent player rotation
-            //aka what side of the tunnel they are on
-            rb.AddForce(sidewaysforce*Time.deltaTime * Mathf.Cos(playerRadRot), sidewaysforce * Time.deltaTime * Mathf.Sin(playerRadRot), 0, ForceMode.VelocityChange);
-        }
-        //if a is pressed on the keyboard
-        if (Input.GetKey("a"))
-        {
-            //adds a velocity change force to the player relative left
-            //the direction is calculated based on the cirrent player rotation
-            //aka what side of the tunnel they are on
-            rb.AddForce(-sidewaysforce * Time.deltaTime * Mathf.Cos(playerRadRot), -sidewaysforce * Time.deltaTime * Mathf.Sin(playerRadRot), 0, ForceMode.VelocityChange);
-        }*/
+        
     }
-    //0 is left, 1 is right
-    public void MoveSideways(bool direction)
+
+    public void MoveLeft()
     {
         rb.AddForce(-sidewaysforce * Time.deltaTime * Mathf.Cos(playerRadRot), -sidewaysforce * Time.deltaTime * Mathf.Sin(playerRadRot), 0, ForceMode.VelocityChange);
+    }
+
+    public void MoveRight()
+    {
+        rb.AddForce(sidewaysforce * Time.deltaTime * Mathf.Cos(playerRadRot), sidewaysforce * Time.deltaTime * Mathf.Sin(playerRadRot), 0, ForceMode.VelocityChange);
     }
 }

@@ -4,6 +4,7 @@ public class Client : MonoBehaviour
 {
     private PlayerController m_PlayerReciever;
     public PlayerMovement pm;
+    public Invoker invoker;
 
     // Start is called before the first frame update
     void Start()
@@ -16,16 +17,16 @@ public class Client : MonoBehaviour
     {
         if (Input.GetKey("a"))
         {
-            Command playerCommand = new MoveSidewaysCommand(m_PlayerReciever, 0);
-            Invoker invoker = new Invoker();
+            Command playerCommand = new MoveLeftCommand(m_PlayerReciever);
+            //Invoker invoker = new Invoker();
 
             invoker.SetCommand(playerCommand);
             invoker.ExecuteCommand();
         }
         if (Input.GetKey("d"))
         {
-            Command playerCommand = new MoveSidewaysCommand(m_PlayerReciever, 1);
-            Invoker invoker = new Invoker();
+            Command playerCommand = new MoveRightCommand(m_PlayerReciever);
+            //Invoker invoker = new Invoker();
 
             invoker.SetCommand(playerCommand);
             invoker.ExecuteCommand();
